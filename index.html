@@ -768,3 +768,12 @@
     if(!e.includes('@')){alert('Email invalide.');return;}
     const amt=parseInt(document.getElementById('contrib-amount').value)||0;
     if(amt < 100){alert('Montant minimum : 100 FCFA.');return;}
+    const mode=document.getElementById('cf-mode').value;
+    const msg=sanitize(document.getElementById('cf-msg').value.trim());
+    window.location.href='mailto:agrosensbf@gmail.com?subject=Contribution VERT DEMAIN - '+amt+' FCFA&body='+encodeURIComponent('Nom: '+n+'\nEmail: '+e+'\nMontant: '+amt+' FCFA\nMode: '+mode+'\n\n'+msg);
+    document.getElementById('contrib-success').style.display='block';
+    document.querySelector('.btn-donate').style.display='none';
+  }
+</script>
+</body>
+</html>
